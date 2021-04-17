@@ -1,15 +1,33 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import React from "react";
+import { useRouter } from "next/router";
+import { SpaceBackground, PortalLoader, Pattern } from "../components";
+import { HomeContainer } from "../features";
+import styled from "styled-components";
+const IndexPage = () => {
+  const router = useRouter();
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+  React.useEffect(() => {
+    setTimeout(() => {
+      router.push("login");
+    }, 400);
+  }, []);
 
-export default IndexPage
+  return (
+    <SpaceBackground>
+      <LoadingContainer>
+        <PortalLoader />
+      </LoadingContainer>
+    </SpaceBackground>
+  );
+};
+
+const LoadingContainer = styled.div`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+`;
+
+export default IndexPage;
