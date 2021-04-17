@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { PortalLoader, InputText, CardList } from "../../../components";
+import { PortalLoader, CardList } from "../../../components";
 
 export const MainView = ({ loading, data }: any) => {
   return (

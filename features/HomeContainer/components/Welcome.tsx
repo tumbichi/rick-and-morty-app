@@ -2,7 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Typewriter } from "../../../components";
 
-export const Welcome = ({ text }) => {
+type WelcomeProps = {
+  text: string;
+};
+
+export const Welcome = ({ text }: WelcomeProps) => {
   React.useEffect(() => {}, []);
 
   return (

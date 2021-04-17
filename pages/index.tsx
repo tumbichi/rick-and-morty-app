@@ -1,7 +1,6 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { SpaceBackground, PortalLoader, Pattern } from "../components";
-import { HomeContainer } from "../features";
+import { SpaceBackground, PortalLoader } from "../components";
 import styled from "styled-components";
 const IndexPage = () => {
   const router = useRouter();
