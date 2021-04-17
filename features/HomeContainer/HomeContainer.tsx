@@ -10,7 +10,6 @@ import { getAllCharacters } from "./services";
 const WELCOME_TEXT = "¡Bienvenido Rick Sanchez del Universo C-137!";
 
 export const HomeContainer = () => {
-  const [spaceHeight, setSpaceHeight] = React.useState(1080);
 
   const dispatch = useDispatch();
   const { data, status }: { data: []; status: HomeStatus } = useSelector(
@@ -46,7 +45,6 @@ export const HomeContainer = () => {
 
   React.useEffect(() => {
     const time = WELCOME_TEXT.length * 100 + 300;
-    console.log({ time });
     setTimeout(() => {
       dispatch(setLoadingStatus());
 
@@ -63,22 +61,6 @@ export const HomeContainer = () => {
       });
     }, time);
   }, []);
-
-  /*   React.useEffect(() => {
-    if (status === HomeStatus.LOADING)
-      setTimeout(() => {
-        dispatch(setMainStatus([]));
-      }, 400);
-  }, [status]); */
-
-  React.useEffect(() => {
-    if (status === HomeStatus.MAIN) {
-      console.log("WINDOW_SCREEN", window.screen);
-      const cards = document.getElementById("cards");
-      console.log("CARDS", { cards, height: cards.clientHeight });
-      setSpaceHeight((data.length / 18) * 1050);
-    }
-  }, [data]);
 
   return (
     <SpaceBackground>

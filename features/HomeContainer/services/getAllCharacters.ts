@@ -11,7 +11,7 @@ export const getAllCharacters = async () => {
     return Promise.reject(error);
   }
 
-  console.log({ response  }, `length ${response.data.results.length}`);
+  // console.log({ response  }, `length ${response.data.results.length}`);
 
   return Promise.resolve(response.data);
 };

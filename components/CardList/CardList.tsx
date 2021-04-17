@@ -28,7 +28,6 @@ const Container = styled.div`
 `;
 
 const CardWrapper = styled.div`
-  /* max-width: calc((344px + 5rem) * 3); */
   display: flex;
   width: 100%;
   flex-wrap: wrap;
