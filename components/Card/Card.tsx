@@ -91,14 +91,14 @@ export const Card = ({ item }: CardProps) => {
 };
 
 export const Container = styled.article`
-  width: 344px;
-  height: 125px;
+  width: 600px;
+  height: 220px;
   border-radius: 4px;
   background-color: #3c3e44;
   color: white;
   display: flex;
   overflow: hidden;
-  margin: 0.25rem;
+  margin: 0.75rem;
   align-self: center;
   box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px,
     rgb(0 0 0 / 6%) 0px 2px 4px -1px;
@@ -129,9 +129,10 @@ const Content = styled.div`
 `;
 
 const Title = styled.h1`
+  font-size: 24px;
   font-weight: 800;
-  margin: 2px 0;
-  padding-left: 6px;
+  margin: 6px 0;
+  padding-left: 8px;
 
   :hover {
     color: rgba(104, 164, 58, 0.8);
@@ -140,8 +141,8 @@ const Title = styled.h1`
 `;
 
 const Point = styled.span<{ color?: string }>`
-  height: 4px;
-  width: 4px;
+  height: 8px;
+  width: 8px;
   background: ${({ color }) => color};
   border-radius: 100%;
 `;
@@ -153,22 +154,24 @@ const StatusWrapper = styled.div`
 `;
 
 const StatusText = styled.p`
-  font-size: 10px;
+  font-size: 20px;
   font-weight: 600;
 `;
 
 const TextContainer = styled.div`
-  margin: 2px 0px;
+  margin: 6px 0px;
+
 `;
 
 const LabelText = styled.p`
-  font-size: 8px;
+  font-size: 14px;
+  font-weight: 300;
   margin: 0 0 3px;
 `;
 
 const ValueText = styled.p`
-  font-size: 10px;
-  margin: 0 0 4px;
+  font-size: 18px;
+  margin: 0 0 6px;
   font-weight: 500;
 
   :hover {
@@ -181,6 +184,7 @@ const TopContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin: 5px 0 ;
 `;
 
 const BottomContent = styled.div`
@@ -188,11 +192,12 @@ const BottomContent = styled.div`
   flex-direction: column;
   flex-wrap: flex-start;
   padding: 0 10px;
+  margin: 10px 0 ;
   justify-content: center;
 `;
 
 const SpecieText = styled.h3<{ species: string }>`
-  font-size: 10px;
+  font-size: 20px;
   font-weight: 500;
   background-color: ${({ species }) => {
     switch (species) {
@@ -214,7 +219,7 @@ const SpecieText = styled.h3<{ species: string }>`
 `;
 
 const GenderText = styled.span<{}>`
-  font-size: 10px;
+  font-size: 20px;
   font-weight: 500;
   height: fit-content;
   width: fit-content;
@@ -225,6 +230,6 @@ const GenderText = styled.span<{}>`
 const GenderChar = styled.span<{ gender: string }>`
   ${({ gender }) =>
     gender === "unknown"
-      ? `font-size: 12px; margin-right: 2px;`
-      : `font-size: 20px; margin-bottom: 2px;`};
+      ? `font-size: 20px; margin-right: 2px;`
+      : `font-size: 28px; margin-bottom: 2px;`};
 `;
