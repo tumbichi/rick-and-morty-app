@@ -70,6 +70,8 @@ export const Card = ({ item }: CardProps) => {
       </ImageContainer>
       <Content>
         <Title>{item.name}</Title>
+        <span>
+        </span>
         <TopContent>
           {renderStatus()}
           <SpecieText species={item.species}>{item.species}</SpecieText>
@@ -140,6 +142,28 @@ const Title = styled.h1`
   }
 `;
 
+const SpecieText = styled.h3<{ species: string }>`
+  font-size: 20px;
+  font-weight: 500;
+  background-color: ${({ species }) => {
+    switch (species) {
+      case "Human": {
+        return "#38B0DE";
+      }
+      case "Alien": {
+        return "#3cd070";
+      }
+      default: {
+        return "red";
+      }
+    }
+  }};
+  width: fit-content;
+  margin: 4px 0;
+  padding: 2px 6px;
+  border-radius: 4px;
+`;
+
 const Point = styled.span<{ color?: string }>`
   height: 8px;
   width: 8px;
@@ -160,7 +184,6 @@ const StatusText = styled.p`
 
 const TextContainer = styled.div`
   margin: 6px 0px;
-
 `;
 
 const LabelText = styled.p`
@@ -184,7 +207,7 @@ const TopContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 5px 0 ;
+  margin: 5px 0;
 `;
 
 const BottomContent = styled.div`
@@ -192,30 +215,8 @@ const BottomContent = styled.div`
   flex-direction: column;
   flex-wrap: flex-start;
   padding: 0 10px;
-  margin: 10px 0 ;
+  margin: 10px 0;
   justify-content: center;
-`;
-
-const SpecieText = styled.h3<{ species: string }>`
-  font-size: 20px;
-  font-weight: 500;
-  background-color: ${({ species }) => {
-    switch (species) {
-      case "Human": {
-        return "#38B0DE";
-      }
-      case "Alien": {
-        return "#3cd070";
-      }
-      default: {
-        return "red";
-      }
-    }
-  }};
-  width: fit-content;
-  margin: 4px 0;
-  padding: 2px 6px;
-  border-radius: 4px;
 `;
 
 const GenderText = styled.span<{}>`
