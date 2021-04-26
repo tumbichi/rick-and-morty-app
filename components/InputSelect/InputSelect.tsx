@@ -25,16 +25,11 @@ export const ClearIndicator = (props: any) => {
   );
 };
 
-export const LoadingIndicator = (props: any) => {
+export const LoadingIndicator = () => {
   return <LoadingSpinner />;
 };
 
-export const InputSelect = ({
-  loading,
-  options,
-  placeholder,
-  value,
-}: any) => {
+export const InputSelect = ({ loading, options, placeholder, value }: any) => {
   return (
     <Select
       isClearable
@@ -78,10 +73,10 @@ export const LoadingSpinner = styled.span`
 `;
 
 const customStyles = {
-  container: (styledProvides: any, { isFocused, isDisabled }: any) => ({
+  container: (styledProvides: any /* , { isFocused, isDisabled }: any */) => ({
     ...styledProvides,
   }),
-  control: (styledProvides: any, { isFocused, isDisabled }: any) => {
+  control: ({}, { isFocused, isDisabled }: any) => {
     return {
       height: "32px",
       display: "flex",
@@ -118,15 +113,15 @@ const customStyles = {
     maxHeight: 32 * 4.5,
     overflowY: "auto",
   }),
-  indicatorSeparator: (styledProvides: any, state: any) => {
+  indicatorSeparator: () => {
     return {};
   },
-  singleValue: (styledProvides: any, state: any) => {
+  singleValue: () => {
     return {
       color: palette.text,
     };
   },
-  multiValue: (styledProvides: any, state: any) => {
+  multiValue: (styledProvides: any) => {
     // console.log('multiValue styledProvides', styledProvides);
     return {
       ...styledProvides,
@@ -135,7 +130,7 @@ const customStyles = {
       padding: "0 0.125rem",
     };
   },
-  multiValueRemove: (styledProvides: any, state: any) => {
+  multiValueRemove: (styledProvides: any) => {
     // console.log('multiValueRemove styledProvides', styledProvides);
     return {
       ...styledProvides,
@@ -144,7 +139,7 @@ const customStyles = {
       margin: "2px 4px",
     };
   },
-  placeholder: (styledProvides: any, state: any) => {
+  placeholder: () => {
     return {
       fontSize: "1rem",
       color: "#9e9e9e",

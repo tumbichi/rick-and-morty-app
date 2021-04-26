@@ -82,9 +82,3 @@ const SearchText = styled.input`
     color: #121212;
   }
 `;
-
-const SelectInput = styled.select`
-  padding: 10px;
-  box-sizing: border-box;
-  border: 0;
-`;

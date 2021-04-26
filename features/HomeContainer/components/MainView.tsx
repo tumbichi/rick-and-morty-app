@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { CardList } from "components";
 
-export const MainView = ({ loading, data }: any) => {
+export const MainView = ({ data }: any) => {
   return (
     <Content>
       <CardList data={data} />
