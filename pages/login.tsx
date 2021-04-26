@@ -1,11 +1,10 @@
 import React from "react";
-
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import {
   SpaceBackground,
   InputText,
-} from "../components";
+} from "components";
 
 const LoginPage = ({}) => {
   const router = useRouter();
@@ -89,7 +88,7 @@ const AnimationWrapper = styled.div`
     stroke-dasharray: 140 540;
     stroke-dashoffset: -474;
     stroke-width: 4px;
-    stroke: rgba(104, 164, 58, 0.8);
+    stroke: #68a43a;
   }
 
   .text {
